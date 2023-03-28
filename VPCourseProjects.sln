@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture6", "Lecture6\Lectur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture 7", "Lecture 7\Lecture 7.csproj", "{76087ECA-8128-4404-AC1F-E9C8CF1BF61B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture 8", "Lecture 8\Lecture 8.csproj", "{D560CB6B-60AF-43BF-8B59-8664F63D3663}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{76087ECA-8128-4404-AC1F-E9C8CF1BF61B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76087ECA-8128-4404-AC1F-E9C8CF1BF61B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76087ECA-8128-4404-AC1F-E9C8CF1BF61B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D560CB6B-60AF-43BF-8B59-8664F63D3663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D560CB6B-60AF-43BF-8B59-8664F63D3663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D560CB6B-60AF-43BF-8B59-8664F63D3663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D560CB6B-60AF-43BF-8B59-8664F63D3663}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
