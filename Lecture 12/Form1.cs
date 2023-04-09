@@ -36,5 +36,8 @@ namespace Lecture_12
         // You are required to create a simple calculator based on this project
         // The calculator must provide the following operations:
         // Adding +, Subtracting -, Multiplication *, Division /
+        
+
+        // Note: You must use custom event handlers just as explained in this lecture
     }
 }
