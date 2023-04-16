@@ -156,7 +156,6 @@
             this.groupBox2.Controls.Add(this.chkbxSwimming);
             this.groupBox2.Controls.Add(this.chkbxGaming);
             this.groupBox2.Controls.Add(this.chkbxHiking);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Location = new System.Drawing.Point(30, 116);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 204);
@@ -179,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(339, 511);
+            this.ClientSize = new System.Drawing.Size(327, 511);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
