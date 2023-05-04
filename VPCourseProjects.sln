@@ -41,6 +41,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture 18", "Lecture 18\Le
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture 19", "Lecture 19\Lecture 19.csproj", "{C126856C-4297-4295-8CEF-379F3720B29D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "DatabaseScripts", "{48AFD3DB-D1DF-4135-A231-FBB965915A9F}"
+	ProjectSection(SolutionItems) = preProject
+		DatabaseScripts\Lecture20.sql = DatabaseScripts\Lecture20.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
