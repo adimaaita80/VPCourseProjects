@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Data;
 
 namespace Lecture_22
 {
@@ -30,9 +29,7 @@ namespace Lecture_22
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'iU_VP_Script_DBDataSet.Students' table. You can move, or remove it, as needed.
-            this.studentsTableAdapter.Fill(this.iU_VP_Script_DBDataSet.Students);
-
+            RefreshDataGridview();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -69,6 +66,20 @@ namespace Lecture_22
             MessageBox.Show("تم التعديل بنجاح");
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string commandString = $"Delete from Students where StudentId = {txtId.Text}";
+            SqlCommand command = new SqlCommand(commandString, connection);
+
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+
+            RefreshDataGridview();
+            txtName.Text = "";
+            MessageBox.Show("تم إلغاء القيد بنجاح");
+        }
+
         private void RefreshDataGridview()
         {
             // If you want to run any sql command on SQL Server from your
@@ -89,6 +100,40 @@ namespace Lecture_22
         {
             txtId.Text = dgvStudents.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtName.Text = dgvStudents.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private string GetStudentById(string studentId)
+        {
+            string commandString = $"Select * from Students where studentId = {studentId}";
+            SqlCommand command = new SqlCommand( commandString, connection);
+
+            string studentReport = "";
+
+            if (!string.IsNullOrEmpty(studentId))
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                
+
+                while (reader.Read())
+                {
+                    studentReport = "Student ID: " + reader.GetInt32(0).ToString() + "\nStudent Name: " + reader.GetString(1);
+                }
+
+                connection.Close();
+            }
+            else
+            {
+                studentReport = "Record does not exist";
+            }
+
+            return studentReport;
+        }
+
+        private void btnGetStudentDetails_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(GetStudentById(txtId.Text));
         }
     }
 }

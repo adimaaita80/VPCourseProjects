@@ -35,15 +35,17 @@
             this.lblName = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
-            this.iU_VP_Script_DBDataSet = new Lecture_22.IU_VP_Script_DBDataSet();
-            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentsTableAdapter = new Lecture_22.IU_VP_Script_DBDataSetTableAdapters.StudentsTableAdapter();
             this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iU_VP_Script_DBDataSet = new Lecture_22.IU_VP_Script_DBDataSet();
+            this.studentsTableAdapter = new Lecture_22.IU_VP_Script_DBDataSetTableAdapters.StudentsTableAdapter();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnGetStudentDetails = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iU_VP_Script_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iU_VP_Script_DBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblId
@@ -84,7 +86,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.Lime;
             this.btnAdd.Location = new System.Drawing.Point(132, 176);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(91, 31);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -111,20 +113,6 @@
             this.dgvStudents.TabIndex = 5;
             this.dgvStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellClick);
             // 
-            // iU_VP_Script_DBDataSet
-            // 
-            this.iU_VP_Script_DBDataSet.DataSetName = "IU_VP_Script_DBDataSet";
-            this.iU_VP_Script_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentsBindingSource
-            // 
-            this.studentsBindingSource.DataMember = "Students";
-            this.studentsBindingSource.DataSource = this.iU_VP_Script_DBDataSet;
-            // 
-            // studentsTableAdapter
-            // 
-            this.studentsTableAdapter.ClearBeforeFill = true;
-            // 
             // studentIdDataGridViewTextBoxColumn
             // 
             this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "StudentId";
@@ -139,22 +127,60 @@
             this.studentNameDataGridViewTextBoxColumn.Name = "studentNameDataGridViewTextBoxColumn";
             this.studentNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // studentsBindingSource
+            // 
+            this.studentsBindingSource.DataMember = "Students";
+            this.studentsBindingSource.DataSource = this.iU_VP_Script_DBDataSet;
+            // 
+            // iU_VP_Script_DBDataSet
+            // 
+            this.iU_VP_Script_DBDataSet.DataSetName = "IU_VP_Script_DBDataSet";
+            this.iU_VP_Script_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentsTableAdapter
+            // 
+            this.studentsTableAdapter.ClearBeforeFill = true;
+            // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Yellow;
             this.btnUpdate.Location = new System.Drawing.Point(229, 176);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(93, 31);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDelete.Location = new System.Drawing.Point(328, 175);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(88, 32);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnGetStudentDetails
+            // 
+            this.btnGetStudentDetails.Location = new System.Drawing.Point(620, 176);
+            this.btnGetStudentDetails.Name = "btnGetStudentDetails";
+            this.btnGetStudentDetails.Size = new System.Drawing.Size(168, 31);
+            this.btnGetStudentDetails.TabIndex = 8;
+            this.btnGetStudentDetails.Text = "Student Details";
+            this.btnGetStudentDetails.UseVisualStyleBackColor = true;
+            this.btnGetStudentDetails.Click += new System.EventHandler(this.btnGetStudentDetails_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 481);
+            this.Controls.Add(this.btnGetStudentDetails);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.btnAdd);
@@ -166,8 +192,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iU_VP_Script_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iU_VP_Script_DBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +213,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn studentIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnGetStudentDetails;
     }
 }
 
